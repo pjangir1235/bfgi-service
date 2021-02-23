@@ -16,6 +16,7 @@
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
+		<appengine.deploy.version>GCLOUD_CONFIG</appengine.deploy.version> 
 	</properties>
 
 	<dependencyManagement>
@@ -35,6 +36,8 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> 
+				<version>16.3.0</version> <type>pom</type> <scope>import</scope> </dependency> -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -55,33 +58,19 @@
 			<artifactId>spring-boot-starter-jetty</artifactId>
 			<version>2.4.2</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
-			<version>1.2.7.RELEASE</version>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>com.google.cloud.tools</groupId>
+			<artifactId>appengine-maven-plugin</artifactId>
+			<version>2.4.0</version>
 		</dependency>
-		https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-			<version>2.4.2</version>
-		</dependency> -->
-<!-- 
-		<dependency>
-			<groupId>com.google.cloud.sql</groupId>
-			<artifactId>mysql-socket-factory-connector-j-8</artifactId>
-			<version>1.0.10</version>
-		</dependency> -->
-<dependency>
-    <groupId>com.google.cloud.tools</groupId>
-    <artifactId>appengine-maven-plugin</artifactId>
-    <version>2.4.0</version>
-</dependency>
-		
+		<!-- <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-logging-logback</artifactId> 
+			<version>0.120.0-alpha</version> </dependency> -->
+
 	</dependencies>
 
 
@@ -104,6 +93,10 @@
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>2.4.0</version>
+				<configuration>
+					<projectId>GCLOUD_CONFIG</projectId>
+          			<version>bfgi-service</version>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

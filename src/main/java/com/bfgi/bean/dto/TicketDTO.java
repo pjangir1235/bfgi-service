@@ -3,29 +3,19 @@ package com.bfgi.bean.dto;
 import java.util.Date;
 
 public class TicketDTO {
-    /**
-     *
-     */
-    private int id;
-    private int userId;
+	
+    private Long userId;
     private String category;
     private String description;
     private Date date;
     private String status;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
