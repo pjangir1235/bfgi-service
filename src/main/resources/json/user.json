@@ -3,28 +3,28 @@
     "userId": "10000001",
     "userName": "Sanjay Prakash",
 	"accountNumber": "3000000001",
-	"accountBalance": "1000.00",
+	"accountBalance": "231510.00",
     "address": "Bengaluru",
 	"email": "sanjay.prakash@gmail.com",
     "contactNo": "9009009001"
   },
   {
     "userId": "10000002",
-    "userName": "Sanjay Prakash",
+    "userName": "Raghav Sharma",
 	"accountNumber": "3000000002",
-	"accountBalance": "1000.00",
+	"accountBalance": "100235.00",
     "address": "Bengaluru",
-	"email": "sanjay.prakash@gmail.com",
-    "contactNo": "9009009001"
+	"email": "raghav.sharma@gmail.com",
+    "contactNo": "8003232322"
   },
   {
     "userId": "10000003",
-    "userName": "Sanjay Prakash",
+    "userName": "Vijay Raj",
 	"accountNumber": "3000000003",
-	"accountBalance": "1000.00",
+	"accountBalance": "200000.00",
     "address": "Bengaluru",
-	"email": "sanjay.prakash@gmail.com",
-    "contactNo": "9009009001"
+	"email": "vijay.sharma@gmail.com",
+    "contactNo": "7223015542"
   },
   {
     "userId": "10000004",
