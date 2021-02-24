@@ -1,7 +1,12 @@
 package com.bfgi.service.singlton;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -12,8 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Component
 public class TicketSingltonService {
 	
-	//private static final Logger logger = LoggerFactory.getLogger(TicketSingltonService.class);
-	public List<TicketDTO> ticketList;
+	public static List<TicketDTO> ticketList=new ArrayList<>();
 	
 	public void loadData() {
 		final ObjectMapper objectMapper = new ObjectMapper();
@@ -21,8 +25,18 @@ public class TicketSingltonService {
 			ticketList = objectMapper.readValue(this.getClass().getClassLoader().getResource("json/ticket.json"), new TypeReference<List<TicketDTO>>(){});
 		} 
 		catch (IOException e) {
-		//	logger.error("TicketSingltonService::loadData() unable to fetch data");
 		}
+	}
+
+	public List<TicketDTO> getTicketById(Long userId) {
+		return ticketList.stream().filter(ticket->ticket.getUserId().equals(userId)).collect(Collectors.toList());
+	}
+	public TicketDTO addTicket(TicketDTO ticketRequestDto) {
+		ticketRequestDto.setStatus("PENDING");
+		ticketRequestDto.setDate(new Date());
+		ticketList.add(ticketRequestDto);
+		return ticketRequestDto;
+		
 	}
 
 }

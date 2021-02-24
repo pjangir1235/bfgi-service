@@ -2,11 +2,14 @@ package com.bfgi.bean.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class TicketDTO {
 	
     private Long userId;
     private String category;
     private String description;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date date;
     private String status;
 

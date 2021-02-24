@@ -32,7 +32,7 @@ public class AccountServiceImpl implements AccountService {
 		UserDTO sourceUser=userService.getUserDataById(paymentRequest.getSourceUserId());
 		if(sourceUser.getAccountBalance()>=paymentRequest.getAmount()) {
 			Double balance=sourceUser.getAccountBalance()-paymentRequest.getAmount();
-			UserDTO targetUser=userService.getUserDataById(paymentRequest.getSourceUserId());
+			UserDTO targetUser=userService.getUserDataById(paymentRequest.getTargetUserId());
 			userService.updateBalance(paymentRequest.getSourceUserId(),sourceUser.getAccountBalance()-paymentRequest.getAmount());
 			userService.updateBalance(paymentRequest.getTargetUserId(),targetUser.getAccountBalance()+paymentRequest.getAmount());
 			return mapper.mapPayment(paymentRequest,balance);
